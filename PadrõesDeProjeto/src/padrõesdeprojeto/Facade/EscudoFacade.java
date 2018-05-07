@@ -26,4 +26,16 @@ public class EscudoFacade {
           escudoCor.escudoCorBranco();
           
       }
+      public void escudoBucklerBronzePreto() {
+          escudoTipo.escudoTipoHeader();
+          escudoMaterial.escudoMaterialBronze();
+          escudoCor.escudoCorPreto();
+          
+      }
+      public void escudoHeaderAcoOriginal() {
+          escudoTipo.escudoTipoHeader();
+          escudoMaterial.escudoMaterialAco();
+          escudoCor.escudoCorOriginal();
+          
+      }
 }

@@ -12,14 +12,14 @@ package padrõesdeprojeto.Facade;
 public class EscudoTipo {
 
     public void escudoTipoKite() { //formato de gota
-        System.out.println("Kite");
+        System.out.print("Kite");
     }
 
     public void escudoTipoHeader() {//formato de pipa com a parte de cima chata
-        System.out.println("Header");
+        System.out.print("Header");
     }
 
     public void escudoTipoBuckler() { //formato redondo com uma bola no meio
-        System.out.println("Buckler");
+        System.out.print("Buckler");
     }
 }
