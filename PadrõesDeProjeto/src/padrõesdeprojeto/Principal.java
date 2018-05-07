@@ -12,6 +12,7 @@ package padrõesdeprojeto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import padrõesdeprojeto.Facade.EscudoFacade;
 import padrõesdeprojeto.Memento.Memento;
 import padrõesdeprojeto.Memento.Originator;
 import padrõesdeprojeto.Memento.Caretaker;
@@ -36,6 +37,10 @@ public class Principal {
         
         Caretaker caretaker = new Caretaker();
         Originator originator = new Originator();
+
+        //Inicializador do facade
+        EscudoFacade escudoF = new EscudoFacade();
+        escudoF.escudoKiteMadeiraBranco();
         
         while (!entrada.equals("9")){
             
