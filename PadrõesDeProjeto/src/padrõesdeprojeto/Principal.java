@@ -7,6 +7,7 @@ Padrões de Projeto Presentes no Código.
 4- Memento (Há o memento na funcionalidade de desfazer a ultima compra feita no ferreiro)
 5- Facade (Facade realiza a criação dos escudos)
 6- Template (Realiza a criação de cotas)
+7- Observer (A cada modificação do inventario o personagem é notificado disso)
  */
 package padrõesdeprojeto;
 
@@ -16,6 +17,7 @@ import padrõesdeprojeto.Facade.EscudoFacade;
 import padrõesdeprojeto.Memento.Memento;
 import padrõesdeprojeto.Memento.Originator;
 import padrõesdeprojeto.Memento.Caretaker;
+import padrõesdeprojeto.Observer.Inventario;
 import padrõesdeprojeto.Template.CotaAco;
 import padrõesdeprojeto.Template.CotaCouro;
 import padrõesdeprojeto.Template.CotaMalha;
@@ -26,12 +28,12 @@ public class Principal {
 
         String entrada = "0";
         Arma arma = null;
+        
+        Inventario inventario = new Inventario();
 
-        Personagem personagem = new Personagem();
-        personagem.setCarteira(1000);
+        Personagem personagem = new Personagem(inventario);
 
-        Personagem personagemCopia = new Personagem();
-        personagemCopia.setCarteira(1000);
+        Personagem personagemCopia = new Personagem(inventario);
 
         ArrayList<String> lista = new ArrayList<String>();
 
@@ -43,7 +45,6 @@ public class Principal {
 
         //Inicializador do facade
         EscudoFacade escudoF = new EscudoFacade();
-        
 
         while (!entrada.equals("9")) {
 
@@ -62,14 +63,11 @@ public class Principal {
                 Ferreiro ferreiroFerro = new FerreiroFerro();
 
                 arma = ferreiroFerro.fabricar(TipoArma.ESPADA);
-                lista.add(arma.toString());
-                System.out.println(arma.toString() + " criada.");
+                inventario.setItens(arma.toString());
                 arma = ferreiroFerro.fabricar(TipoArma.LANCA);
-                lista.add(arma.toString());
-                System.out.println(arma.toString() + " criada.");
+                inventario.setItens(arma.toString());
                 arma = ferreiroFerro.fabricar(TipoArma.MACHADO);
-                lista.add(arma.toString());
-                System.out.println(arma.toString() + " criada.");
+                inventario.setItens(arma.toString());
 
                 personagem.setCarteira(personagem.getCarteira() - 30);
                 personagemCopia.setCarteira(personagem.getCarteira() + 30);
@@ -79,9 +77,9 @@ public class Principal {
                 Ferreiro ferreiroOuro = new FerreiroOuro();
 
                 arma = ferreiroOuro.fabricar(TipoArma.ESPADA);
-                lista.add(arma.toString());
+                inventario.setItens(arma.toString());
                 System.out.println(arma.toString() + " criada.");
-                arma = ferreiroOuro.fabricar(TipoArma.LANCA);
+                inventario.setItens(arma.toString());
                 lista.add(arma.toString());
                 System.out.println(arma.toString() + " criada.");
                 arma = ferreiroOuro.fabricar(TipoArma.MACHADO);
@@ -154,9 +152,7 @@ public class Principal {
             }
 
             if (entrada.equals("5")) {
-                for (String i : lista) {
-                    System.out.println("Você tem um " + i.toString());
-                }
+                System.out.println("Você tem um " + inventario.getItens().toString());
             }
 
             if (entrada.equals("8")) {
