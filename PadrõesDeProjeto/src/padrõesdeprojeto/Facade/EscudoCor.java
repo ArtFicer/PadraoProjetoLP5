@@ -12,14 +12,14 @@ package padrõesdeprojeto.Facade;
 public class EscudoCor {
 
     public void escudoCorPreto() {
-        System.out.println(" preto");
+        System.out.print(" preto");
     }
 
     public void escudoCorBranco() {
-        System.out.println(" branco");
+        System.out.print(" branco");
     }
 
     public void escudoCorOriginal() {
-        System.out.println(" original");
+        System.out.print(" original");
     }
 }

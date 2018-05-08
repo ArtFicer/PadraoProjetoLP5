@@ -5,7 +5,8 @@ Padrões de Projeto Presentes no Código.
 2- Strategy (Tendo a interface Ferreiro podemos ter sub-classes com comportamentos diferentes. Ausência de IFs)
 3- State (O objeto arma altera o seu estado dependendo do parametro passado - que seria o tipo da arma)
 4- Memento (Há o memento na funcionalidade de desfazer a ultima compra feita no ferreiro)
-5- 
+5- Facade (Facade realiza a criação dos escudos)
+6- Template (Realiza a criação de cotas)
  */
 package padrõesdeprojeto;
 
@@ -42,7 +43,7 @@ public class Principal {
 
         //Inicializador do facade
         EscudoFacade escudoF = new EscudoFacade();
-        escudoF.escudoKiteMadeiraBranco();
+        
 
         while (!entrada.equals("9")) {
 
@@ -129,21 +130,21 @@ public class Principal {
                     //Inicializador Template
                     CotaCouro cota = new CotaCouro();
                     System.out.println(cota.getDadosCota());
-                    
+
                     personagem.setCarteira(personagem.getCarteira() - 20);
                     personagemCopia.setCarteira(personagem.getCarteira() + 20);
                 } else if (entrada.equals("2")) {
-                     //Inicializador Template
+                    //Inicializador Template
                     CotaMalha cota = new CotaMalha();
                     System.out.println(cota.getDadosCota());
-                    
+
                     personagem.setCarteira(personagem.getCarteira() - 35);
                     personagemCopia.setCarteira(personagem.getCarteira() + 35);
                 } else if (entrada.equals("3")) {
-                     //Inicializador Template
+                    //Inicializador Template
                     CotaAco cota = new CotaAco();
                     System.out.println(cota.getDadosCota());
-                    
+
                     personagem.setCarteira(personagem.getCarteira() - 60);
                     personagemCopia.setCarteira(personagem.getCarteira() + 60);
                 } else {

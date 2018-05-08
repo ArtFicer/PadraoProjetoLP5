@@ -12,14 +12,14 @@ package padrõesdeprojeto.Facade;
 public class EscudoMaterial {
 
     public void escudoMaterialMadeira() {
-        System.out.println(" de madeira");
+        System.out.print(" de madeira");
     }
 
     public void escudoMaterialBronze() {
-        System.out.println(" de bronze");
+        System.out.print(" de bronze");
     }
 
     public void escudoMaterialAco() {
-        System.out.println(" de aço");
+        System.out.print(" de aço");
     }
 }
