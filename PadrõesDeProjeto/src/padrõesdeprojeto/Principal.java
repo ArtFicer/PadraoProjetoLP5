@@ -15,6 +15,9 @@ import padrõesdeprojeto.Facade.EscudoFacade;
 import padrõesdeprojeto.Memento.Memento;
 import padrõesdeprojeto.Memento.Originator;
 import padrõesdeprojeto.Memento.Caretaker;
+import padrõesdeprojeto.Template.CotaAco;
+import padrõesdeprojeto.Template.CotaCouro;
+import padrõesdeprojeto.Template.CotaMalha;
 
 public class Principal {
 
@@ -113,6 +116,41 @@ public class Principal {
                 }
 
             }
+            if (entrada.equals("4")) {
+                System.out.println("\n1-Pouco Resistente #Custo 20 moedas."
+                        + "\n2-Resistência Moderada #Custo 35 moedas."
+                        + "\n3-Muito Resistente #Custo 60 moedas."
+                        + "\n4-Voltar");
+                entrada = scanner.nextLine();
+
+                System.out.println("Você comprou com sucesso uma ");
+
+                if (entrada.equals("1")) {
+                    //Inicializador Template
+                    CotaCouro cota = new CotaCouro();
+                    System.out.println(cota.getDadosCota());
+                    
+                    personagem.setCarteira(personagem.getCarteira() - 20);
+                    personagemCopia.setCarteira(personagem.getCarteira() + 20);
+                } else if (entrada.equals("2")) {
+                     //Inicializador Template
+                    CotaMalha cota = new CotaMalha();
+                    System.out.println(cota.getDadosCota());
+                    
+                    personagem.setCarteira(personagem.getCarteira() - 35);
+                    personagemCopia.setCarteira(personagem.getCarteira() + 35);
+                } else if (entrada.equals("3")) {
+                     //Inicializador Template
+                    CotaAco cota = new CotaAco();
+                    System.out.println(cota.getDadosCota());
+                    
+                    personagem.setCarteira(personagem.getCarteira() - 60);
+                    personagemCopia.setCarteira(personagem.getCarteira() + 60);
+                } else {
+                    break;
+                }
+
+            }
 
             if (entrada.equals("5")) {
                 for (String i : lista) {
@@ -135,6 +173,7 @@ public class Principal {
         System.out.println("1-Fabricar armas de Ferro.  #Custo 30 moedas.");
         System.out.println("2-Fabricar armas de Ouro.   #Custo 60 moedas");
         System.out.println("3-Fabricar escudo           #Custo 30 à 100 moedas");
+        System.out.println("4-Fabricar cota             #Custo 20 à 60 moedas");
         System.out.println("9-Sair.");
     }
 
@@ -145,6 +184,7 @@ public class Principal {
         System.out.println("1-Fabricar armas de Ferro.  #Custo 30 moedas.");
         System.out.println("2-Fabricar armas de Ouro.   #Custo 60 moedas");
         System.out.println("3-Fabricar escudo           #Custo 30 à 100 moedas");
+        System.out.println("4-Fabricar cota             #Custo 20 à 60 moedas");
         System.out.println("5-Visualizar seu inventario.");
         System.out.println("8-Desfazer compra anterior e sair.");
         System.out.println("9-Sair.");

@@ -7,21 +7,11 @@ package padrõesdeprojeto.Template;
  */
 public abstract class CotaTemplate {
 
-    private String nome;
-
     public abstract String getTipo();
 
     public String getDadosCota() {
 
-        return "Cota: " + getNome() + " - Tipo: " + getTipo();// + getInstituicaoOrigem();
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        return "Cota" + getTipo();// + getInstituicaoOrigem();
     }
 
 }

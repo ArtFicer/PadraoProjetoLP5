@@ -14,6 +14,6 @@ import padrõesdeprojeto.Template.CotaTemplate;
 public class CotaMalha extends CotaTemplate {
     
      public String getTipo(){
-        return "de Ferro ";
+        return "de Malha ";
     }
 }
