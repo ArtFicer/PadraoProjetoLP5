@@ -26,9 +26,9 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        String entrada = "0";
+        String entrada = "0", auxArmazenamento = "";
         Arma arma = null;
-        
+
         Inventario inventario = new Inventario();
 
         Personagem personagem = new Personagem(inventario);
@@ -63,11 +63,12 @@ public class Principal {
                 Ferreiro ferreiroFerro = new FerreiroFerro();
 
                 arma = ferreiroFerro.fabricar(TipoArma.ESPADA);
-                inventario.setItens(arma.toString());
+                auxArmazenamento += arma.toString() + "\n ";
                 arma = ferreiroFerro.fabricar(TipoArma.LANCA);
-                inventario.setItens(arma.toString());
+                auxArmazenamento += arma.toString() + "\n ";
                 arma = ferreiroFerro.fabricar(TipoArma.MACHADO);
-                inventario.setItens(arma.toString());
+                auxArmazenamento += arma.toString() + "\n ";
+                inventario.setItens(auxArmazenamento);
 
                 personagem.setCarteira(personagem.getCarteira() - 30);
                 personagemCopia.setCarteira(personagem.getCarteira() + 30);
@@ -77,14 +78,10 @@ public class Principal {
                 Ferreiro ferreiroOuro = new FerreiroOuro();
 
                 arma = ferreiroOuro.fabricar(TipoArma.ESPADA);
-                inventario.setItens(arma.toString());
-                System.out.println(arma.toString() + " criada.");
-                inventario.setItens(arma.toString());
-                lista.add(arma.toString());
-                System.out.println(arma.toString() + " criada.");
+                auxArmazenamento += arma.toString() + "\n ";
                 arma = ferreiroOuro.fabricar(TipoArma.MACHADO);
-                lista.add(arma.toString());
-                System.out.println(arma.toString() + " criada.");
+                auxArmazenamento += arma.toString() + "\n ";
+                inventario.setItens(auxArmazenamento);
 
                 personagem.setCarteira(personagem.getCarteira() - 60);
                 personagemCopia.setCarteira(personagem.getCarteira() + 60);
@@ -102,14 +99,17 @@ public class Principal {
                     escudoF.escudoKiteMadeiraBranco();
                     personagem.setCarteira(personagem.getCarteira() - 30);
                     personagemCopia.setCarteira(personagem.getCarteira() + 30);
+                    inventario.setItens(auxArmazenamento += "\nEscudo kite madeira branco");
                 } else if (entrada.equals("2")) {
                     escudoF.escudoBucklerBronzePreto();
                     personagem.setCarteira(personagem.getCarteira() - 70);
                     personagemCopia.setCarteira(personagem.getCarteira() + 70);
+                    inventario.setItens(auxArmazenamento += "\nEscudo Buckler de bronze preto");
                 } else if (entrada.equals("3")) {
                     escudoF.escudoHeaderAcoOriginal();
                     personagem.setCarteira(personagem.getCarteira() - 100);
                     personagemCopia.setCarteira(personagem.getCarteira() + 100);
+                    inventario.setItens(auxArmazenamento += "\nEscudo Header de aço original");
                 } else {
                     break;
                 }
@@ -128,23 +128,23 @@ public class Principal {
                     //Inicializador Template
                     CotaCouro cota = new CotaCouro();
                     System.out.println(cota.getDadosCota());
-
                     personagem.setCarteira(personagem.getCarteira() - 20);
                     personagemCopia.setCarteira(personagem.getCarteira() + 20);
+                    inventario.setItens(auxArmazenamento += "\nCota de couro");
                 } else if (entrada.equals("2")) {
                     //Inicializador Template
                     CotaMalha cota = new CotaMalha();
                     System.out.println(cota.getDadosCota());
-
                     personagem.setCarteira(personagem.getCarteira() - 35);
                     personagemCopia.setCarteira(personagem.getCarteira() + 35);
+                    inventario.setItens(auxArmazenamento += "\nCota de Malha");
                 } else if (entrada.equals("3")) {
                     //Inicializador Template
                     CotaAco cota = new CotaAco();
                     System.out.println(cota.getDadosCota());
-
                     personagem.setCarteira(personagem.getCarteira() - 60);
                     personagemCopia.setCarteira(personagem.getCarteira() + 60);
+                    inventario.setItens(auxArmazenamento += "\nCota de Aço");
                 } else {
                     break;
                 }
