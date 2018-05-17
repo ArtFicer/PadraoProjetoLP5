@@ -8,6 +8,11 @@ Padrões de Projeto Presentes no Código.
 5- Facade (Facade realiza a criação dos escudos)
 6- Template (Realiza a criação de cotas)
 7- Observer (A cada modificação do inventario o personagem é notificado disso)
+8- MVC *implementar
+9- DAO*implementar
+10- Chain of Responsability (Principal função é evitar a dependência entre um objeto receptor e um objeto solicitante) *implementar
+11- Singlenton (Webinho escreve aqui o que ele faz s2) *implementar
+12- Action *implementar
  */
 package padrõesdeprojeto;
 
