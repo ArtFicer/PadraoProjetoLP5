@@ -28,6 +28,7 @@ import padrõesdeprojeto.Template.CotaCouro;
 import padrõesdeprojeto.Template.CotaMalha;
 import padrõesdeprojeto.singleton.TorreDeFerro;
 
+
 public class Principal {
 
     public static void main(String[] args) {
