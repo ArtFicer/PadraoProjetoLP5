@@ -21,6 +21,7 @@ import padrõesdeprojeto.Observer.Inventario;
 import padrõesdeprojeto.Template.CotaAco;
 import padrõesdeprojeto.Template.CotaCouro;
 import padrõesdeprojeto.Template.CotaMalha;
+import padrõesdeprojeto.singleton.TorreDeFerro;
 
 public class Principal {
 
@@ -28,6 +29,7 @@ public class Principal {
 
         String entrada = "0", auxArmazenamento = "";
         Arma arma = null;
+        TorreDeFerro torre = null;
 
         Inventario inventario = new Inventario();
 
@@ -152,6 +154,18 @@ public class Principal {
             }
 
             if (entrada.equals("5")) {
+                if (torre != null) {
+                    System.out.println("Você já possui está torre!");
+                } else if (personagem.getCarteira() >= 300) {
+                    torre = TorreDeFerro.getInstancia();
+                    personagem.setCarteira(personagem.getCarteira() - 300);
+                    personagemCopia.setCarteira(personagem.getCarteira() + 300);
+                } else {
+                    System.out.println("Saldo Insuficiente ");
+                }
+            }
+
+            if (entrada.equals("6")) {
                 System.out.println("Você tem um " + inventario.getItens().toString());
             }
 
@@ -171,6 +185,7 @@ public class Principal {
         System.out.println("2-Fabricar armas de Ouro.   #Custo 60 moedas");
         System.out.println("3-Fabricar escudo           #Custo 30 à 100 moedas");
         System.out.println("4-Fabricar cota             #Custo 20 à 60 moedas");
+        System.out.println("5-Fabricar torre de ferro.  #Custo 300 moedas");
         System.out.println("9-Sair.");
     }
 
@@ -182,7 +197,8 @@ public class Principal {
         System.out.println("2-Fabricar armas de Ouro.   #Custo 60 moedas");
         System.out.println("3-Fabricar escudo           #Custo 30 à 100 moedas");
         System.out.println("4-Fabricar cota             #Custo 20 à 60 moedas");
-        System.out.println("5-Visualizar seu inventario.");
+        System.out.println("5-Fabricar torre de ferro.  #Custo 300 moedas");
+        System.out.println("6-Visualizar seu inventario.");
         System.out.println("8-Desfazer compra anterior e sair.");
         System.out.println("9-Sair.");
     }
