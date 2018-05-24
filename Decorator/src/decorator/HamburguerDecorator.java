@@ -9,11 +9,11 @@ package decorator;
  *
  * @author Aluno
  */
-public abstract class PacoteViagemDecorator extends PacoteViagem{
+public abstract class HamburguerDecorator extends Hamburguer{
     
-    PacoteViagem pacoteViagem;
+    Hamburguer pacoteViagem;
     
-    public PacoteViagemDecorator(PacoteViagem pacoteViagem){
+    public HamburguerDecorator(Hamburguer pacoteViagem){
        this.pacoteViagem=pacoteViagem; 
     }
     

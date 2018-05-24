@@ -1,7 +1,7 @@
 
 package decorator;
 
-public abstract class PacoteViagem {
+public abstract class Hamburguer {
 
     String nome;
     double preco, duracao;

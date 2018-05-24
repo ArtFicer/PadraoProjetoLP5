@@ -10,7 +10,7 @@ public class Decorator {
 		System.out.println(meuCoquetel.getNome() + " = "
 				+ meuCoquetel.getPreco());
 
-		meuCoquetel = new Refrigerante(meuCoquetel);
+		meuCoquetel = new Queijo(meuCoquetel);
 		System.out.println(meuCoquetel.getNome() + " = "
 				+ meuCoquetel.getPreco());
 	}
