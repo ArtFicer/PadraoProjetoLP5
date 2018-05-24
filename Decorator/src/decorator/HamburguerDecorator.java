@@ -1,25 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package decorator;
 
-/**
- *
- * @author Aluno
- */
-public abstract class HamburguerDecorator extends Hamburguer{
-    
+public abstract class HamburguerDecorator extends Hamburguer {
+
     Hamburguer pacoteViagem;
-    
-    public HamburguerDecorator(Hamburguer pacoteViagem){
-       this.pacoteViagem=pacoteViagem; 
+
+    public HamburguerDecorator(Hamburguer hamburguer) {
+        this.pacoteViagem = hamburguer;
     }
-    
+
     @Override
-    public double getDuracao() {
-        return duracao;
+    public String getDuracao() {
+        return descricao;
     }
 
     public String getNome() {

@@ -3,11 +3,11 @@ package decorator;
 
 public abstract class Hamburguer {
 
-    String nome;
-    double preco, duracao;
+    String nome,descricao;
+    double preco;
 
-    public double getDuracao() {
-        return duracao;
+    public String getDescricao() {
+        return descricao;
     }
 
     public String getNome() {

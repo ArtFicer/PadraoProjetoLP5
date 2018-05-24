@@ -2,11 +2,11 @@
 package decorator;
 
 
-public class Molho extends CoquetelDecorator {
+public class Molho extends HamburguerDecorator {
 
-	public Molho(Coquetel umCoquetel) {
-		super(umCoquetel);
-		nome = "Refrigerante";
+	public Molho(Hamburguer hamburguer) {
+		super(hamburguer);
+		nome = "Molho";
 		preco = 1.0;
 	}
 

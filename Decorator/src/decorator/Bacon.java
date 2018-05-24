@@ -2,12 +2,12 @@
 package decorator;
 
 
-public class Bacon extends CoquetelDecorator {
+public class Bacon extends HamburguerDecorator {
 
-	public Bacon(Coquetel umCoquetel) {
-		super(umCoquetel);
-		nome = "Refrigerante";
-		preco = 1.0;
+	public Bacon(Hamburguer umHamburguer) {
+		super(umHamburguer);
+		nome = "Bacon";
+		preco = 2.0;
 	}
 
 }

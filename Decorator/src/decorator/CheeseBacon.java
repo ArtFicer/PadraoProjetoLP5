@@ -1,9 +1,9 @@
 
 package decorator;
 
-public class CheeseBacon extends Coquetel {
+public class CheeseBacon extends Hamburguer {
 	public CheeseBacon() {
-		nome = "Cachaça";
-		preco = 1.5;
+		nome = "CheeseBacon";
+		preco = 15.0;
 	}
 }
