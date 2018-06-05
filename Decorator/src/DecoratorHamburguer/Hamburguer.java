@@ -1,14 +1,9 @@
-
-package decorator;
+package DecoratorHamburguer;
 
 public abstract class Hamburguer {
 
-    String nome,descricao;
+    String nome;
     double preco;
-
-    public String getDescricao() {
-        return descricao;
-    }
 
     public String getNome() {
         return nome;

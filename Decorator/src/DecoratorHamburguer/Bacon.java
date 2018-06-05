@@ -1,13 +1,13 @@
 
-package decorator;
+package DecoratorHamburguer;
 
 
 public class Bacon extends HamburguerDecorator {
 
 	public Bacon(Hamburguer umHamburguer) {
-		super(umHamburguer);
+        super(umHamburguer);
 		nome = "Bacon";
-		preco = 2.0;
+		preco = 3.5;
 	}
 
 }
